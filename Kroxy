@@ -1,19 +1,12 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88 
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
-]=]
-
--- Instances: 48 | Scripts: 12 | Modules: 0
+--Kroxy By Noremius
+-- Instances: 81 | Scripts: 21 | Modules: 0
 local G2L = {};
 
 -- StarterGui.Kroxy
 G2L["1"] = Instance.new("ScreenGui", game.CoreGui);
 G2L["1"]["Name"] = [[Kroxy]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
 
 -- StarterGui.Kroxy.Main
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -339,7 +332,7 @@ G2L["27"] = Instance.new("UICorner", G2L["26"]);
 G2L["28"] = Instance.new("LocalScript", G2L["26"]);
 
 
--- StarterGui.Kroxy.Main.Buttons.Close
+-- StarterGui.Kroxy.Main.Buttons.Options
 G2L["29"] = Instance.new("TextButton", G2L["22"]);
 G2L["29"]["TextWrapped"] = true;
 G2L["29"]["BorderSizePixel"] = 0;
@@ -349,16 +342,16 @@ G2L["29"]["TextSize"] = 14;
 G2L["29"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["29"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["29"]["Size"] = UDim2.new(0.6872852444648743, 0, 0.11574073880910873, 0);
-G2L["29"]["Name"] = [[Close]];
+G2L["29"]["Name"] = [[Options]];
 G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["29"]["Text"] = [[Close]];
-G2L["29"]["Position"] = UDim2.new(0.15463916957378387, 0, 0.5740740895271301, 0);
+G2L["29"]["Text"] = [[Options]];
+G2L["29"]["Position"] = UDim2.new(0.15094918012619019, 0, 0.6195287108421326, 0);
 
--- StarterGui.Kroxy.Main.Buttons.Close.UICorner
+-- StarterGui.Kroxy.Main.Buttons.Options.UICorner
 G2L["2a"] = Instance.new("UICorner", G2L["29"]);
 
 
--- StarterGui.Kroxy.Main.Buttons.Close.LocalScript
+-- StarterGui.Kroxy.Main.Buttons.Options.LocalScript
 G2L["2b"] = Instance.new("LocalScript", G2L["29"]);
 
 
@@ -366,8 +359,8 @@ G2L["2b"] = Instance.new("LocalScript", G2L["29"]);
 G2L["2c"] = Instance.new("UICorner", G2L["22"]);
 
 
--- StarterGui.Kroxy.Open
-G2L["2d"] = Instance.new("TextButton", G2L["1"]);
+-- StarterGui.Kroxy.Main.Buttons.LocalPlayer
+G2L["2d"] = Instance.new("TextButton", G2L["22"]);
 G2L["2d"]["TextWrapped"] = true;
 G2L["2d"]["BorderSizePixel"] = 0;
 G2L["2d"]["TextScaled"] = true;
@@ -375,23 +368,273 @@ G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(91, 91, 91);
 G2L["2d"]["TextSize"] = 14;
 G2L["2d"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["2d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2d"]["Visible"] = false;
-G2L["2d"]["Size"] = UDim2.new(0.12455692142248154, 0, 0.11574073135852814, 0);
-G2L["2d"]["Name"] = [[Open]];
+G2L["2d"]["Size"] = UDim2.new(0.6872852444648743, 0, 0.11574073880910873, 0);
+G2L["2d"]["Name"] = [[LocalPlayer]];
 G2L["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2d"]["Text"] = [[Open]];
-G2L["2d"]["Position"] = UDim2.new(0.1351507157087326, 0, 0.1011282205581665, 0);
+G2L["2d"]["Text"] = [[Local Player]];
+G2L["2d"]["Position"] = UDim2.new(0.15463921427726746, 0, 0.46643516421318054, 0);
 
--- StarterGui.Kroxy.Open.UICorner
+-- StarterGui.Kroxy.Main.Buttons.LocalPlayer.UICorner
 G2L["2e"] = Instance.new("UICorner", G2L["2d"]);
 
 
--- StarterGui.Kroxy.Open.LocalScript
+-- StarterGui.Kroxy.Main.Buttons.LocalPlayer.LocalScript
 G2L["2f"] = Instance.new("LocalScript", G2L["2d"]);
 
 
+-- StarterGui.Kroxy.Main.Buttons.Close
+G2L["30"] = Instance.new("TextButton", G2L["22"]);
+G2L["30"]["TextWrapped"] = true;
+G2L["30"]["BorderSizePixel"] = 0;
+G2L["30"]["TextScaled"] = true;
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(91, 91, 91);
+G2L["30"]["TextSize"] = 14;
+G2L["30"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["30"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["30"]["Size"] = UDim2.new(0.6872852444648743, 0, 0.11574073880910873, 0);
+G2L["30"]["Name"] = [[Close]];
+G2L["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["Text"] = [[Close]];
+G2L["30"]["Position"] = UDim2.new(0.15463921427726746, 0, 0.7729377746582031, 0);
+
+-- StarterGui.Kroxy.Main.Buttons.Close.UICorner
+G2L["31"] = Instance.new("UICorner", G2L["30"]);
+
+
+-- StarterGui.Kroxy.Main.Buttons.Close.LocalScript
+G2L["32"] = Instance.new("LocalScript", G2L["30"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage
+G2L["33"] = Instance.new("Frame", G2L["2"]);
+G2L["33"]["BorderSizePixel"] = 0;
+G2L["33"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["33"]["Size"] = UDim2.new(0.938144326210022, 0, 0.8333333134651184, 0);
+G2L["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["33"]["Position"] = UDim2.new(0.030927835032343864, 0, 0.14120370149612427, 0);
+G2L["33"]["Visible"] = false;
+G2L["33"]["Name"] = [[LocalPlayerPage]];
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.UICorner
+G2L["34"] = Instance.new("UICorner", G2L["33"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Leave
+G2L["35"] = Instance.new("TextButton", G2L["33"]);
+G2L["35"]["TextWrapped"] = true;
+G2L["35"]["BorderSizePixel"] = 0;
+G2L["35"]["TextScaled"] = true;
+G2L["35"]["BackgroundColor3"] = Color3.fromRGB(91, 91, 91);
+G2L["35"]["TextSize"] = 14;
+G2L["35"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["35"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["35"]["Size"] = UDim2.new(0.6438955068588257, 0, 0.11574073135852814, 0);
+G2L["35"]["Name"] = [[Leave]];
+G2L["35"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["35"]["Text"] = [[Leave]];
+G2L["35"]["Position"] = UDim2.new(0.19493265450000763, 0, 0.7407407164573669, 0);
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Leave.UICorner
+G2L["36"] = Instance.new("UICorner", G2L["35"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Leave.LocalScript
+G2L["37"] = Instance.new("LocalScript", G2L["35"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Leave.UICorner
+G2L["38"] = Instance.new("UICorner", G2L["35"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Speed
+G2L["39"] = Instance.new("TextBox", G2L["33"]);
+G2L["39"]["CursorPosition"] = -1;
+G2L["39"]["BorderSizePixel"] = 0;
+G2L["39"]["TextSize"] = 14;
+G2L["39"]["TextWrapped"] = true;
+G2L["39"]["TextScaled"] = true;
+G2L["39"]["BackgroundColor3"] = Color3.fromRGB(16, 19, 23);
+G2L["39"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["39"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["39"]["PlaceholderText"] = [[Speed Value Here...]];
+G2L["39"]["Size"] = UDim2.new(0.901098906993866, 0, 0.1388888955116272, 0);
+G2L["39"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["39"]["Text"] = [[]];
+G2L["39"]["Position"] = UDim2.new(0.03663003817200661, 0, 0.03611111268401146, 0);
+G2L["39"]["Name"] = [[Speed]];
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Speed.UICorner
+G2L["3a"] = Instance.new("UICorner", G2L["39"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Speed.LocalScript
+G2L["3b"] = Instance.new("LocalScript", G2L["39"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Jump
+G2L["3c"] = Instance.new("TextBox", G2L["33"]);
+G2L["3c"]["CursorPosition"] = -1;
+G2L["3c"]["BorderSizePixel"] = 0;
+G2L["3c"]["TextSize"] = 14;
+G2L["3c"]["TextWrapped"] = true;
+G2L["3c"]["TextScaled"] = true;
+G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(16, 19, 23);
+G2L["3c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3c"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3c"]["PlaceholderText"] = [[Jump Value Here...]];
+G2L["3c"]["Size"] = UDim2.new(0.901098906993866, 0, 0.1388888955116272, 0);
+G2L["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3c"]["Text"] = [[]];
+G2L["3c"]["Position"] = UDim2.new(0.03663003817200661, 0, 0.24166665971279144, 0);
+G2L["3c"]["Name"] = [[Jump]];
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Jump.UICorner
+G2L["3d"] = Instance.new("UICorner", G2L["3c"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Jump.LocalScript
+G2L["3e"] = Instance.new("LocalScript", G2L["3c"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Gravity
+G2L["3f"] = Instance.new("TextBox", G2L["33"]);
+G2L["3f"]["CursorPosition"] = -1;
+G2L["3f"]["BorderSizePixel"] = 0;
+G2L["3f"]["TextSize"] = 14;
+G2L["3f"]["TextWrapped"] = true;
+G2L["3f"]["TextScaled"] = true;
+G2L["3f"]["BackgroundColor3"] = Color3.fromRGB(16, 19, 23);
+G2L["3f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3f"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3f"]["PlaceholderText"] = [[Gravity Value Here...]];
+G2L["3f"]["Size"] = UDim2.new(0.901098906993866, 0, 0.1388888955116272, 0);
+G2L["3f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3f"]["Text"] = [[]];
+G2L["3f"]["Position"] = UDim2.new(0.03663003817200661, 0, 0.44999998807907104, 0);
+G2L["3f"]["Name"] = [[Gravity]];
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Gravity.UICorner
+G2L["40"] = Instance.new("UICorner", G2L["3f"]);
+
+
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Gravity.LocalScript
+G2L["41"] = Instance.new("LocalScript", G2L["3f"]);
+
+
+-- StarterGui.Kroxy.Main.OptionsPage
+G2L["42"] = Instance.new("Frame", G2L["2"]);
+G2L["42"]["BorderSizePixel"] = 0;
+G2L["42"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["42"]["Size"] = UDim2.new(0.938144326210022, 0, 0.8333333134651184, 0);
+G2L["42"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["42"]["Position"] = UDim2.new(0.030927835032343864, 0, 0.14120370149612427, 0);
+G2L["42"]["Visible"] = false;
+G2L["42"]["Name"] = [[OptionsPage]];
+
+-- StarterGui.Kroxy.Main.OptionsPage.UICorner
+G2L["43"] = Instance.new("UICorner", G2L["42"]);
+
+
+-- StarterGui.Kroxy.Main.OptionsPage.Leave
+G2L["44"] = Instance.new("TextButton", G2L["42"]);
+G2L["44"]["TextWrapped"] = true;
+G2L["44"]["BorderSizePixel"] = 0;
+G2L["44"]["TextScaled"] = true;
+G2L["44"]["BackgroundColor3"] = Color3.fromRGB(91, 91, 91);
+G2L["44"]["TextSize"] = 14;
+G2L["44"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["44"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["44"]["Size"] = UDim2.new(0.6438955068588257, 0, 0.11574073135852814, 0);
+G2L["44"]["Name"] = [[Leave]];
+G2L["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["44"]["Text"] = [[Leave]];
+G2L["44"]["Position"] = UDim2.new(0.19493265450000763, 0, 0.7407407164573669, 0);
+
+-- StarterGui.Kroxy.Main.OptionsPage.Leave.UICorner
+G2L["45"] = Instance.new("UICorner", G2L["44"]);
+
+
+-- StarterGui.Kroxy.Main.OptionsPage.Leave.LocalScript
+G2L["46"] = Instance.new("LocalScript", G2L["44"]);
+
+
+-- StarterGui.Kroxy.Main.OptionsPage.Leave.UICorner
+G2L["47"] = Instance.new("UICorner", G2L["44"]);
+
+
+-- StarterGui.Kroxy.Main.OptionsPage.MakeDraggableScript
+G2L["48"] = Instance.new("TextButton", G2L["42"]);
+G2L["48"]["TextWrapped"] = true;
+G2L["48"]["BorderSizePixel"] = 0;
+G2L["48"]["TextScaled"] = true;
+G2L["48"]["BackgroundColor3"] = Color3.fromRGB(91, 91, 91);
+G2L["48"]["TextSize"] = 14;
+G2L["48"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["48"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["48"]["Size"] = UDim2.new(0.732600748538971, 0, 0.1388888955116272, 0);
+G2L["48"]["Name"] = [[MakeDraggableScript]];
+G2L["48"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["48"]["Text"] = [[Make Kroxy Draggable]];
+G2L["48"]["Position"] = UDim2.new(0.1318681389093399, 0, 0.05833333358168602, 0);
+
+-- StarterGui.Kroxy.Main.OptionsPage.MakeDraggableScript.LocalScript
+G2L["49"] = Instance.new("LocalScript", G2L["48"]);
+
+
+-- StarterGui.Kroxy.Main.OptionsPage.MakeDraggableScript.UICorner
+G2L["4a"] = Instance.new("UICorner", G2L["48"]);
+
+
+-- StarterGui.Kroxy.Main.OptionsPage.MakeUnDraggableScript
+G2L["4b"] = Instance.new("TextButton", G2L["42"]);
+G2L["4b"]["TextWrapped"] = true;
+G2L["4b"]["BorderSizePixel"] = 0;
+G2L["4b"]["TextScaled"] = true;
+G2L["4b"]["BackgroundColor3"] = Color3.fromRGB(91, 91, 91);
+G2L["4b"]["TextSize"] = 14;
+G2L["4b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4b"]["Visible"] = false;
+G2L["4b"]["Size"] = UDim2.new(0.732600748538971, 0, 0.1388888955116272, 0);
+G2L["4b"]["Name"] = [[MakeUnDraggableScript]];
+G2L["4b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4b"]["Text"] = [[Make Kroxy UnDraggable]];
+G2L["4b"]["Position"] = UDim2.new(0.1318681389093399, 0, 0.05833333358168602, 0);
+
+-- StarterGui.Kroxy.Main.OptionsPage.MakeUnDraggableScript.LocalScript
+G2L["4c"] = Instance.new("LocalScript", G2L["4b"]);
+
+
+-- StarterGui.Kroxy.Main.OptionsPage.MakeUnDraggableScript.UICorner
+G2L["4d"] = Instance.new("UICorner", G2L["4b"]);
+
+
+-- StarterGui.Kroxy.Open
+G2L["4e"] = Instance.new("TextButton", G2L["1"]);
+G2L["4e"]["TextWrapped"] = true;
+G2L["4e"]["BorderSizePixel"] = 0;
+G2L["4e"]["TextScaled"] = true;
+G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(91, 91, 91);
+G2L["4e"]["TextSize"] = 14;
+G2L["4e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4e"]["Visible"] = false;
+G2L["4e"]["Size"] = UDim2.new(0.12455692142248154, 0, 0.11574073135852814, 0);
+G2L["4e"]["Name"] = [[Open]];
+G2L["4e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4e"]["Text"] = [[Open]];
+G2L["4e"]["Position"] = UDim2.new(0.1351507157087326, 0, 0.1011282205581665, 0);
+
+-- StarterGui.Kroxy.Open.UICorner
+G2L["4f"] = Instance.new("UICorner", G2L["4e"]);
+
+
 -- StarterGui.Kroxy.Open.LocalScript
-G2L["30"] = Instance.new("LocalScript", G2L["2d"]);
+G2L["50"] = Instance.new("LocalScript", G2L["4e"]);
+
+
+-- StarterGui.Kroxy.Open.LocalScript
+G2L["51"] = Instance.new("LocalScript", G2L["4e"]);
 
 
 -- StarterGui.Kroxy.Main.AboutUsPage.Leave.LocalScript
@@ -471,31 +714,129 @@ local script = G2L["28"];
 		end)
 end;
 task.spawn(C_28);
--- StarterGui.Kroxy.Main.Buttons.Close.LocalScript
+-- StarterGui.Kroxy.Main.Buttons.Options.LocalScript
 local function C_2b()
 local script = G2L["2b"];
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.OptionsPage.Visible = true
+		script.Parent.Parent.Parent.Buttons.Visible = false
+	end)
+end;
+task.spawn(C_2b);
+-- StarterGui.Kroxy.Main.Buttons.LocalPlayer.LocalScript
+local function C_2f()
+local script = G2L["2f"];
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.AboutUsPage.Visible = false
+		script.Parent.Parent.Parent.LocalPlayerPage.Visible = true
+		script.Parent.Parent.Parent.Buttons.Visible = false
+		end)
+end;
+task.spawn(C_2f);
+-- StarterGui.Kroxy.Main.Buttons.Close.LocalScript
+local function C_32()
+local script = G2L["32"];
 	script.Parent.MouseButton1Down:Connect(function()
 		script.Parent.Parent.Parent.Parent.Main.Visible = false
 		script.Parent.Parent.Parent.Parent.Open.Visible = true
 	end)
 end;
-task.spawn(C_2b);
+task.spawn(C_32);
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Leave.LocalScript
+local function C_37()
+local script = G2L["37"];
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Buttons.Visible = true
+		script.Parent.Parent.Parent.LocalPlayerPage.Visible = false
+		end)
+end;
+task.spawn(C_37);
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Speed.LocalScript
+local function C_3b()
+local script = G2L["3b"];
+	function speed(enterPressed)
+		if script.Parent.Text and enterPressed then
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = script.Parent.Text
+		end
+	end
+	
+	script.Parent.FocusLost:Connect(speed)
+end;
+task.spawn(C_3b);
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Jump.LocalScript
+local function C_3e()
+local script = G2L["3e"];
+	function jump(enterPressed)
+		if script.Parent.Text and enterPressed then
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = script.Parent.Text
+		end
+	end
+	
+	script.Parent.FocusLost:Connect(jump)
+end;
+task.spawn(C_3e);
+-- StarterGui.Kroxy.Main.LocalPlayerPage.Gravity.LocalScript
+local function C_41()
+local script = G2L["41"];
+	function gravity(enterPressed)
+		if script.Parent.Text and enterPressed then
+			workspace.Gravity = script.Parent.Text
+		end
+	end
+	
+	script.Parent.FocusLost:Connect(gravity)
+end;
+task.spawn(C_41);
+-- StarterGui.Kroxy.Main.OptionsPage.Leave.LocalScript
+local function C_46()
+local script = G2L["46"];
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Buttons.Visible = true
+		script.Parent.Parent.Parent.OptionsPage.Visible = false
+		end)
+end;
+task.spawn(C_46);
+-- StarterGui.Kroxy.Main.OptionsPage.MakeDraggableScript.LocalScript
+local function C_49()
+local script = G2L["49"];
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Parent.Main.Active = true
+		script.Parent.Parent.Parent.Parent.Main.Selectable = true
+		script.Parent.Parent.Parent.Parent.Main.Draggable = true
+		script.Parent.Visible = false
+		script.Parent.Parent.MakeUnDraggableScript.Visible = true
+	end)
+end;
+task.spawn(C_49);
+-- StarterGui.Kroxy.Main.OptionsPage.MakeUnDraggableScript.LocalScript
+local function C_4c()
+local script = G2L["4c"];
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Parent.Main.Active = false
+		script.Parent.Parent.Parent.Parent.Main.Selectable = false
+		script.Parent.Parent.Parent.Parent.Main.Draggable = false
+		script.Parent.Parent.MakeDraggableScript.Visible = true
+		script.Parent.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Position = UDim2.new(0.312, 0,0.066, 0)
+	end)
+end;
+task.spawn(C_4c);
 -- StarterGui.Kroxy.Open.LocalScript
-local function C_2f()
-local script = G2L["2f"];
+local function C_50()
+local script = G2L["50"];
 	script.Parent.MouseButton1Up:Connect(function()
 		script.Parent.Parent.Main.Visible = true
 		script.Parent.Visible = false
 	end)
 end;
-task.spawn(C_2f);
+task.spawn(C_50);
 -- StarterGui.Kroxy.Open.LocalScript
-local function C_30()
-local script = G2L["30"];
+local function C_51()
+local script = G2L["51"];
 	script.Parent.Active = true
 	script.Parent.Selectable = true
 	script.Parent.Draggable = true
 end;
-task.spawn(C_30);
+task.spawn(C_51);
 
 return G2L["1"], require;
